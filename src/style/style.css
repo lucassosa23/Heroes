@@ -1,0 +1,29 @@
+html, body {
+    color: grey;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-bar.user {
+    color: grey;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    align-items: center;
+    padding: 10px;
+    font-size: 15px;
+    
+}
+
+
+.navbar-brand {
+    
+    padding: 15px;
+    grid-template-columns: max-content;
+    
+}
+
+.navbar-collapse {
+    padding: 10px;
+    grid-row: auto;
+    grid-template-columns: max-content;
+
+}
+

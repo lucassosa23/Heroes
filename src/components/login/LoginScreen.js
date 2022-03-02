@@ -1,16 +1,21 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 //import { useNavigate } from 'react-router-dom';
 import { useForm } from '../../Hooks/UseForm';
-import { startLoginEmailPassword } from '../actions/auth';
+import { startGoogleLogin, startLoginEmailPassword } from '../actions/auth';
+
+
 
 export const LoginScreen = () => {
 
   const dispatch = useDispatch();
 
-  const [ formValues, handleInputChange] = useForm({
+  const {loading} = useSelector (state => state.ui);
+ 
+
+  const [ formValues, handleInputChange] = useForm({  
     email: "nando.gil@gmail.com",
-    password: "123456"
+    password: "123456",
   })
 
   const {email, password} = formValues;
@@ -24,6 +29,9 @@ export const LoginScreen = () => {
     dispatch(startLoginEmailPassword(email, password));
  }
 
+ const handleLoginGoogle = ()=>{
+   dispatch(startGoogleLogin());
+ }
   return <div className='container mt-5'>
       <h1>Login Screen
       </h1>
@@ -49,10 +57,17 @@ export const LoginScreen = () => {
       <button className='btn btn-primary'
       onClick={handleLogin}
       type="submit"
+      disabled = {loading}
       >
         Login
       </button>
       </form>
+
+      <div 
+      onClick={handleLoginGoogle}>
+        <button>Login con Google</button>
+        
+      </div>
       
       
   </div>;

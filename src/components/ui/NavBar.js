@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 
+
 export const Navbar = () => {
 
     const navigate = useNavigate();
@@ -17,7 +18,7 @@ export const Navbar = () => {
                 className="navbar-brand" 
                 to="/"
             >
-                Asociaciones
+                Inicio
             </Link>
 
             <div className="navbar-collapse" >
@@ -47,12 +48,15 @@ export const Navbar = () => {
 
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
                 <ul className="navbar-nav ml-auto">
-                    <span
-                    className='nav-item nav-link text-info'>
-                        Lucas</span>
-                   <button  className="nav-item nav-link"
-                   onClick={ handleLogout }>
-                     Logout
+
+                        <span className='nav-item nav-link text-info' >
+                           Lucas
+                        </span>
+                    <button
+                    
+                    className="nav-item nav-link btn"
+                       onClick={ handleLogout }>
+                            Logout
                     </button>
                 </ul>
             </div>
